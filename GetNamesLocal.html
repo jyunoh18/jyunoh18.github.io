@@ -1,0 +1,61 @@
+HTML page 1
+
+  <html>
+   
+   <head>
+     <script src="localStorage.js"></script>
+   </head> 
+    <body>
+      
+      <script>clearShit();</script>
+    
+      
+  <h1>Add a bunch of names</h1>      
+  <input type="text" id="names">
+  <button onclick="addnames()">Get Name</button>
+  <hr>
+  <button onclick="allDone()">Take me to the next page</button>
+      
+      
+    </body>
+    
+  </html>
+  
+  ---------------------------------------------------------------------
+  
+  HTML page 2
+  
+    <html>
+   
+   <head>
+     <script src="localStorage.js"></script>
+   </head> 
+   <body>
+    <h1>Show all saved names from previous page</h1> 
+    <button onlclick="shownames()">Show names</button>
+    <p id="showAll"></p>
+    
+   </body>
+   </html>
+   
+   ----------------------------------------------------------------------
+   
+   JAVA script part
+   
+   var namesArray = [ ];
+
+function addnames ( ) {
+        namesArray.push ( document.getElementById('names').value);
+        document.getElementById('names').value = "  ";
+}
+        
+function allDoone () {
+
+      localStorage.setItem('list', "namesArray");
+      location.href="shownames.html";
+}
+      
+function shownames ( ) {
+      var x = localStorage.getItem('list');
+      document.getElementById('showAll').innerHTML = x;
+}
