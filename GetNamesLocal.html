@@ -14,11 +14,11 @@ HTML page 1
   <input type="text" id="names">
   <button onclick="addnames()">Get Name</button>
   <hr>
+      <h1>Click this button when done.</h1>    
   <button onclick="allDone()">Take me to the next page</button>
       
       
     </body>
-    
   </html>
   
   ---------------------------------------------------------------------
@@ -34,6 +34,8 @@ HTML page 1
     <h1>Show all saved names from previous page</h1> 
     <button onlclick="shownames()">Show names</button>
     <p id="showAll"></p>
+     <hr>
+     <button onclick="nuke()">Kill Everything </button>
     
    </body>
    </html>
@@ -50,12 +52,18 @@ function addnames ( ) {
 }
         
 function allDoone () {
-
-      localStorage.setItem('list', "namesArray");
+      var a = JSON.stringify(namesArray);
+      window.alert(a);
+      localStorage.setItem('list', a);
       location.href="shownames.html";
 }
       
 function shownames ( ) {
-      var x = localStorage.getItem('list');
-      document.getElementById('showAll').innerHTML = x;
+      var b = JSON.parse(localStorage.getItem('list'));
+      document.getElementById('showAll').innerHTML = b[1];
+}
+
+function nuke () {
+  localstorage.clear ();
+  window.alert("I killed all names");
 }
