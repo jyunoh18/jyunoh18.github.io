@@ -25,7 +25,9 @@ function preload() {
 
 	
 	game.load.audio('background_music', 'assets/battleThemeA.mp3');
-	
+	//game.load.audio('collection_sound', 'assets/AnySong.mp3');
+
+	//
 	backgroundMusic = game.add.audio('background_music');
 	backgroundMusic.loop = true;
 	backgroundMusic.play();
@@ -183,6 +185,7 @@ function collectStar (player, star) {
     //  Add and update the score
     score += 10;
     scoreText.text = 'Score: ' + score;
+    //sound.play()
 
 }
 
