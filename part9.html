@@ -82,7 +82,7 @@ function create() {
 
     //  Player physics properties. Give the little guy a slight bounce.
     player.body.bounce.y = 0.6;
-    player.body.gravity.y = 300;
+    player.body.gravity.y = 170;
     player.body.collideWorldBounds = true;
 
     //  Our two animations, walking left and right.
@@ -105,7 +105,7 @@ function create() {
         star.body.gravity.y = 300;
 
         //  This just gives each star a slightly random bounce value
-        star.body.bounce.y = 0.7 + Math.random() * 0.7;
+        star.body.bounce.y = 0.7 + Math.random() * 0.3;
     }
 
     //  The score
@@ -142,7 +142,7 @@ function update() {
 
     //  Collide the player and the stars with the platforms
     game.physics.arcade.collide(player, platforms);
-    game.physics.arcade.collide(stars, platforms);
+    game.physics.arcade.collide(stars, player);
 
     //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
     
