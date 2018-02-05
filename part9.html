@@ -197,10 +197,15 @@ function collectStar (player, star) {
     scoreText.text = 'Score: ' + score;
     //sound.play()
 
-	
-	
 }
-
+	
+private void addRestartButton() { 
+	String buttonText = "New Game?"; 
+	restartButton = new JButton(buttonText); 
+	Font font = new Font("Helvetica", Font.BOLD, size); 
+	restartButton.setFont(font); 
+	setLayout(null); 
+}
 </script>
 
 </body>
