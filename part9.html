@@ -145,12 +145,9 @@ function update() {
 
     //  Collide the player and the stars with the platforms
     game.physics.arcade.collide(player, platforms);
-    game.physics.arcade.collide(stars, player);
     game.physics.arcade.collide(stars, platforms);
-    game.physics.arcade.collide(stars, stars);
+    
 
-
-	
 
     //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
     
@@ -198,7 +195,14 @@ function collectStar (player, star) {
     scoreText.text = 'Score: ' + score;
     //sound.play()
 
-}
+	private void restartJButtonActionPerformed( ActionEvent event)
+    {
+            what do i place here exactly?
+    }
+
+
+	
+};
 
 </script>
 
