@@ -64,7 +64,6 @@ function create() {
 	
    button2 = game.add.button(330, 200, 'button', changeimage, this, 2, 1, 0);
     button2.name = 'sky2';
-    button2.angle = 14;
     button2.anchor.setTo(0.5, 0.5);
 
 	
@@ -164,7 +163,8 @@ function create() {
 function changeimage (button) {
 	 background.loadTexture(button.name);
 }
-	
+
+
 	
 function gofull () {
 	
