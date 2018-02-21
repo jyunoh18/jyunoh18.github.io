@@ -56,7 +56,8 @@ function create() {
 	
 
     button = game.add.button(game.world.centerX - 10, 10, 'button', actionOnClick, this, 0, 1, 2);
-
+button.anchor.x = .5;
+                    button.anchor.y = .5;
     //  We're going to be using physics, so enable the Arcade Physics system
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
