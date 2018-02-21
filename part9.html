@@ -17,11 +17,13 @@
 var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
 function preload() {
-
-    game.load.image('sky', 'assets/milkyway.png');
-	
 	
      game.load.spritesheet('button', 'assets/button_sprite_sheet.png', 193, 71);
+   
+	
+	game.load.image('sky', 'assets/milkyway.png');
+	
+
 
      game.load.image('sky1', 'assets/background1.png');	
      game.load.image('sky2', 'assets/background2.png');	
@@ -41,6 +43,11 @@ function preload() {
 	backgroundMusic.play();
 }
 
+var button1;
+var button2;
+	
+	
+	
 var player;
 var platforms;
 var cursors;
@@ -51,8 +58,6 @@ var scoreText;
 	
 	
 
-var button1;
-var button2;
 	
 	
 function create() {
