@@ -39,8 +39,20 @@ var cursors;
 var stars;
 var score = 0;
 var scoreText;
+	
+	
+
+var button;	
 
 function create() {
+	
+	
+button = game.add.button(game.world.centerX - 95, 400, 'button', actionOnClick, this, 2, 1, 0);
+	
+   button.onInputOver.add(Start, this);
+   button.onInputOut.add(out, this);
+   button.onInputUp.add(up, this);
+
 
     //  We're going to be using physics, so enable the Arcade Physics system
     game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -81,6 +93,9 @@ function create() {
     game.physics.arcade.enable(player);
 
 
+	
+	
+	
 	
 
     //  Player physics properties. Give the little guy a slight bounce.
@@ -130,6 +145,24 @@ function create() {
     game.input.onDown.add(gofull, this);  
 
 }
+	
+	
+	
+function up() {
+    console.log('button up', arguments);
+}
+
+function over() {
+    console.log('button over');
+}
+
+function out() {
+    console.log('button out');
+}
+
+
+	
+	
 	
 function gofull () {
 	
