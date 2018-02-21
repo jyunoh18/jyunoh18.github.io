@@ -18,10 +18,10 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create
 
 function preload() {
 
-    game.load.image('sky', 'assets/background1.png');
+    game.load.image('sky', 'assets/milkyway.png');
 	
 	
-	
+     game.load.image('button', 'assets/.png', 50, 50);
      game.load.image('sky1', 'assets/background1.png');	
      game.load.image('sky2', 'assets/background2.png');	
 	
@@ -61,10 +61,11 @@ function create() {
     button1.name = 'sky1';
     button1.anchor.setTo(0.5, 0.5);
 	
-    button2 = game.add.button(330, 200, 'button', changeimage, this, 2, 1, 0);
-    button1.name = 'sky2';
-    button1.anchor.setTo(0.5, 0.5);
-	
+   button2 = game.add.button(330, 200, 'button', changeimage, this, 2, 1, 0);
+    button2.name = 'sky2';
+    button2.angle = 14;
+    button2.anchor.setTo(0.5, 0.5);
+
 	
 
     //  We're going to be using physics, so enable the Arcade Physics system
