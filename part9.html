@@ -26,12 +26,7 @@ function preload() {
     game.load.spritesheet('sonic', 'assets/zelda.png', 30 , 33 );
 
 	
-	game.load.audio('background_music', 'assets/battleThemeA.mp3');
-	//game.load.audio('collection_sound', 'assets/AnySong.mp3');
 
-	backgroundMusic = game.add.audio('background_music');
-	backgroundMusic.loop = true;
-	backgroundMusic.play();
 }
 
 	
@@ -55,7 +50,7 @@ var scoreText;
 function create() {
 	
 
-    button = game.add.button(game.world.centerX - 300, 300, 'button', actionOnClick, this, 0, 1, 2);
+    button = game.add.button(game.world.centerX - 300, 300, 'button', actionOnClick, this);
 
 	//  We're going to be using physics, so enable the Arcade Physics system
     game.physics.startSystem(Phaser.Physics.ARCADE);
