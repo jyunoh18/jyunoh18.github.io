@@ -18,7 +18,7 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create
 
 function preload() {
 	   
-    game.load.image('button', 'assets/orange.png');
+    game.load.image('buttoon', 'assets/orange.png');
 
     game.load.image('sky', 'assets/milkyway.png');
     game.load.image('ground', 'assets/platform.png');
@@ -55,7 +55,7 @@ var scoreText;
 function create() {
 	
 
-    button = game.add.button(game.world.centerX - 10, 300, 'button', actionOnClick, this, 0, 1, 2);
+    button = game.add.button(game.world.centerX - 10, 300, 'buttoon', actionOnClick, this, 0, 1, 2);
 
     //  We're going to be using physics, so enable the Arcade Physics system
     game.physics.startSystem(Phaser.Physics.ARCADE);
