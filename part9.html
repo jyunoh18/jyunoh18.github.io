@@ -57,8 +57,13 @@ var button2;
 function create() {
 	
 
+    button1 = game.add.button(100, 100, 'button', changeimage, this, 2, 1, 0);
+    button1.name = 'sky1';
+    button1.anchor.setTo(0.5, 0.5);
 	
-	
+    button2 = game.add.button(330, 200, 'button', changeimage, this, 2, 1, 0);
+    button1.name = 'sky2';
+    button1.anchor.setTo(0.5, 0.5);
 	
 	
 
@@ -154,7 +159,9 @@ function create() {
 
 }
 	
-	
+function changeimage (button) {
+	 background.loadTexture(button.name);
+}
 	
 	
 function gofull () {
