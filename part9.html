@@ -46,12 +46,6 @@ var button;
 
 function create() {
 	
-	
-button = game.add.button(game.world.centerX - 95, 400, 'button', actionOnClick, this, 2, 1, 0);
-	
-   button.onInputOver.add(Start, this);
-   button.onInputOut.add(out, this);
-   button.onInputUp.add(up, this);
 
 
     //  We're going to be using physics, so enable the Arcade Physics system
@@ -146,25 +140,6 @@ button = game.add.button(game.world.centerX - 95, 400, 'button', actionOnClick, 
 
 }
 	
-	
-	
-function up() {
-    console.log('button up', arguments);
-}
-
-function start() {
-    console.log('button start');
-}
-
-function out() {
-    console.log('button out');
-}
-
-function actionOnClick () {
-
-    sky.visible =! sky.visible;
-
-}
 	
 	
 	
