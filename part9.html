@@ -1,9 +1,9 @@
-<!doctype html>
-<html lang="en">
-<head>
+<!doctype html> 
+<html lang="en"> 
+<head> 
 	<meta charset="UTF-8" />
-   
-	<script src="js/phaser.min.js"></script>
+    <title>Phaser - Making your first game, part 9</title>
+	<script type="text/javascript" src="js/phaser.min.js"></script>
     <style type="text/css">
         body {
             margin: 0;
@@ -14,22 +14,30 @@
 
 <script type="text/javascript">
 
-	function preload() {
+var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
-    game.load.spritesheet('button', 'assets/button_sprite_sheet.png', 193, 71);
-    game.load.image('sky','assets/milkyway.png');
+function preload() {
+	   
+    game.load.image('button', 'assets/Android_robot.png');
 
-	game.load.image('ground', 'assets/platform.png');
+    game.load.image('sky', 'assets/milkyway.png');
+   game.load.image('ground', 'assets/platform.png');
     game.load.image('star', 'assets/star.png');
     game.load.spritesheet('sonic', 'assets/zelda.png', 30 , 33 );
 
+     
+	game.load.audio('background_music', 'assets/battleThemeA.mp3');
+	//game.load.audio('collection_sound', 'assets/AnySong.mp3');
+
+	backgroundMusic = game.add.audio('background_music');
+	backgroundMusic.loop = true;
+	backgroundMusic.play();
 }
 
-
-var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create });
+	
+	
 var button;
-
-
+	
 	
 	
 var player;
@@ -41,26 +49,22 @@ var score = 0;
 var scoreText;
 	
 	
-	
-	
 
+	
+	
 function create() {
+	
 
-  game.add.sprite(0, 0, 'sky');
-   
-    //world.center
-    button = game.add.button(game.world.centerX - 100, 0, 'button', actionOnClick, this, 2, 1, 0);
+    button = game.add.button(game.world.centerX - 100, 100, 'button', actionOnClick, this, 0, 1, 2);
 
-     button.onInputOver.add(over, this);
-    button.onInputOut.add(out, this);
-    button.onInputUp.add(up, this);
-	
-	
-	
-	
- game.physics.startSystem(Phaser.Physics.ARCADE);
-	
-	 platforms = game.add.group();
+	//  We're going to be using physics, so enable the Arcade Physics system
+    game.physics.startSystem(Phaser.Physics.ARCADE);
+
+    //  A simple background for our game
+    game.add.sprite(0, 0, 'sky');
+
+    //  The platforms group contains the ground and the 2 ledges we can jump on
+    platforms = game.add.group();
 
     //  We will enable physics for any object that is created in this group
     platforms.enableBody = true;
@@ -144,26 +148,12 @@ function create() {
     game.input.onDown.add(gofull, this);  
 
 }
-
-function up() {
-    console.log('button up', arguments);
-}
-
-function over() {
-    console.log('button over');
-}
-
-function out() {
-    console.log('button out');
-}
-
-function actionOnClick () {
-
-    location.reload();
-
-}
-
 	
+function actionOnClick() {
+	location.reload();
+}
+
+
 	
 function gofull () {
 	
@@ -235,8 +225,11 @@ function collectStar (player, star) {
     scoreText.text = 'Score: ' + score;
     //sound.play()
 
-}	
+}
 	
+
 </script>
+
 </body>
 </html>
+
