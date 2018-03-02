@@ -31,7 +31,7 @@ function preload() {
 function create() {
 
 
-    background = game.add.tileSprite(0, 0, 800, 600, 'background');
+   
     //world.center
     button = game.add.button(game.world.center - 0, 400, 'button', actionOnClick, this, 2, 1, 0);
 
@@ -55,7 +55,7 @@ function out() {
 
 function actionOnClick () {
 
-    background.visible =! background.visible;
+    location.reload();
 
 }
 
