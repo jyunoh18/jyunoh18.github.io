@@ -17,7 +17,8 @@
 
 
 var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create });
-
+var button;
+var background;
 function preload() {
 
     game.load.spritesheet('button', 'assets/button_sprite_sheet.png', 193, 71);
@@ -25,8 +26,7 @@ function preload() {
 
 }
 
-var button;
-var background;
+
 
 function create() {
 
