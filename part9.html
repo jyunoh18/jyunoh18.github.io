@@ -14,24 +14,22 @@
 
 <script type="text/javascript">
 
+	function preload() {
+
+    game.load.spritesheet('button', 'assets/button_sprite_sheet.png', 193, 71);
+    game.load.image('sky','assets/milkyway.png');
+
+}
 
 
 var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create });
 var button;
 
 
-	function preload() {
-
-    game.load.spritesheet('button', 'assets/button_sprite_sheet.png', 193, 71);
-    game.load.image('background','assets/milkyway.png');
-
-}
-
-
 
 function create() {
 
-
+  game.add.sprite(0, 0, 'sky');
    
     //world.center
     button = game.add.button(game.world.center - 0, 400, 'button', actionOnClick, this, 2, 1, 0);
