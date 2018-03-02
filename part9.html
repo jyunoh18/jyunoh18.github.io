@@ -41,7 +41,7 @@ function create() {
 
   game.add.sprite(0, 0, 'sky');
    
-    //world.center
+    // <your sprite>.anchor.setTo(0.5);
     button = game.add.button(game.world.center - 0, 400, 'button', actionOnClick, this, 2, 1, 0);
 
      button.onInputOver.add(over, this);
