@@ -1,9 +1,9 @@
-<!doctype html> 
-<html lang="en"> 
-<head> 
+<!doctype html>
+<html lang="en">
+<head>
 	<meta charset="UTF-8" />
-    <title>Phaser - Making your first game, part 9</title>
-	<script type="text/javascript" src="js/phaser.min.js"></script>
+   
+	<script src="js/phaser.min.js"></script>
     <style type="text/css">
         body {
             margin: 0;
@@ -15,26 +15,26 @@
 <script type="text/javascript">
 
 
+
 var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create });
 
 function preload() {
 
     game.load.spritesheet('button', 'assets/button_sprite_sheet.png', 193, 71);
-    game.load.image('sky', 'assets/milkyway.png');
-
+    game.load.image('background','assets/milkyway.png');
 
 }
 
 var button;
-var sky;
+var background;
 
 function create() {
 
     game.stage.backgroundColor = '#182d3b';
 
-    background = game.add.tileSprite(0, 0, 800, 600, 'sky');
-
-    button = game.add.button(game.world.centerX - 95, 400, 'button', actionOnClick, this, 2, 1, 0);
+    background = game.add.tileSprite(0, 0, 800, 600, 'background');
+    //world.center
+    button = game.add.button(game.world.center - 0, 400, 'button', actionOnClick, this, 2, 1, 0);
 
     button.onInputOver.add(over, this);
     button.onInputOut.add(out, this);
@@ -59,3 +59,7 @@ function actionOnClick () {
     background.visible =! background.visible;
 
 }
+
+</script>
+</body>
+</html>
