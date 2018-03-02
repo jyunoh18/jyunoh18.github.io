@@ -14,7 +14,6 @@
 
 <script type="text/javascript">
 
-var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
 function preload() {
 
@@ -28,6 +27,7 @@ function preload() {
 }
 
 	
+var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
 	
 var button;
 	
@@ -47,7 +47,7 @@ var scoreText;
 	
 function create() {
 	
-button = game.add.button(game.world.center - 0, 400, 'button', actionOnClick, this, 2, 1, 0);
+button = game.add.button(game.world.centerX - 100, 0, 'button', actionOnClick, this, 2, 1, 0);
 
      button.onInputOver.add(over, this);
     button.onInputOut.add(out, this);
